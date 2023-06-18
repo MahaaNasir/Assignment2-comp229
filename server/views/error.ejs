@@ -1,0 +1,27 @@
+<!--
+  Assignment 2
+  File name: error.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include partials/header.ejs %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include partials/main_nav.ejs %>
+
+<!-- Error Page -->
+<div class="container">
+   <h1><%= message %></h1>
+   <h2><%= error.status %></h2>
+   <pre><%= error.stack %></pre>
+   
+</div>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include partials/footer.ejs %>

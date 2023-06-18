@@ -1,0 +1,50 @@
+<!--
+  Assignment 2
+  File name: contact.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include partials/header.ejs %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include partials/main_nav.ejs %>
+
+
+<!-- Contact section -->
+
+<!-- main -->
+<main id="contact">
+  <div class="contact-left">
+    <div class="contact-container">
+      <div class="contact-row">
+        <div class="contact-content">
+          <h1 id="contact-h1">Contact Me</h1>
+          <!-- Link to mail -->
+          <p id="mailLink"><a href="mailto:mahanasir25392@gmail.com"><ion-icon name="paper-plane-outline" id="send-icon"></ion-icon></a>mahanasir25392@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="contact-form">
+          <!-- Form the sender fills information -->
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <textarea name="Message" id="your-message" cols="30" rows="10" placeholder="Message"></textarea>
+            <button type="submit" id="submit">Submit</button>
+          </form>
+          <!-- Display "Message sent when the message is sent" -->
+          <span id="display-message"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include partials/footer.ejs %>

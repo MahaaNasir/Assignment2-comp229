@@ -1,0 +1,67 @@
+<!--
+  Assignment 2
+  File name: add.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include ../partials/header.ejs  %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include ../partials/main_nav.ejs %>
+
+<!--  This page includes add contacts section ---->
+
+<!-- main ---->
+<main class="contacts-container">
+    <h1 id="add-h1"><%= title %></h1>
+    <!-- add contact information ---->
+    <div class="row" id="add-form">
+        <div class="offset-md-3 col-md-6">
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <!-- add name---->
+                    <label for="nameTextField">Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField" 
+                    placeholder="Enter the name"
+                    name="name" required></input>
+                </div>
+                <!-- add phone---->
+                <div class="form-group">
+                    <label for="phoneTextField">Phone</label>
+                    <input type="text" class="form-control"
+                    id="phoneTextField" 
+                    placeholder="Enter the phone number "
+                    name="phone" required></input>
+                </div>
+                <!-- add email---->
+                <div class="form-group">
+                    <label for="emailTextField">Email</label>
+                    <input type="text" class="form-control"
+                    id="emailTextField" 
+                    placeholder="Enter the email address"
+                    name="email" required></input>
+                </div>
+                <br>
+                <!-- submit and cancel buttons---->
+                <button class="btn btn primary" type="submit" id="submit-btn">
+                    <i class="fas fa-edit"></i>
+                    Submit
+                </button>
+                <a href="/contacts-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include ../partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include ../partials/footer.ejs %>

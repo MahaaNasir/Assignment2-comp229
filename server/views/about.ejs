@@ -1,0 +1,80 @@
+<!--
+  Assignment 2
+  File name: about.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include partials/header.ejs %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include partials/main_nav.ejs %>
+
+<!--  This page includes About me section ---->
+
+<!-- main ---->
+<main class="container">
+    <div id="about">
+        <div class="content">
+            <div class="about-row">
+                <div class="column-1">
+                   <img src="Assets/images/pic.png" id="me">
+                </div>
+                <div class="column-2">
+                    <!-- Information about me ---->
+                    <h1 id="about-h1">About Me</h1>
+                    <p id="about-p">
+                      Hi! my name is Maha Nasir.<br>
+                      I am a person who works hard and is enthused, driven
+                      by myself, dependable, and responsible. I am a
+                      responsible team worker who can easily adjust 
+                      to any difficult circumstances. 
+                      I have the ability to operate well both
+                      independently and in a collaborative setting. 
+                      I can stay on task and meet deadlines even when 
+                      under duress.
+                    </p>
+                    <!-- Tabs ---->
+                    <div class="about-tabs">
+                      <p class="tabs active-tab" onclick="clickTab(event,'skills')">Skills</p>
+                      <p class="tabs" onclick="clickTab(event, 'education')">Education</p>
+                      <p class="tabs" onclick="clickTab(event, 'cv')">Download CV</p>
+                   </div>
+                   <!-- Content under the tabs ---->
+                   <div class="tabs-text active-text" id="skills">
+                        <ul>
+                          <li><span>Web Development</span><br>Web Application Development</li>
+                          <li><span>App Development</span><br>Android/IOS Application Development</li>
+                          <li><span>UI/UX</span><br>Web/App interfaces Designing</li>
+                        </ul>
+                  </div>
+                  <div class="tabs-text" id="education">
+                       <ul>
+                            <li><span>2019<br>Upper Secondary Education<br></span>Vestegnen HF & VUC - Denmark</li>
+                            <li><span>2019 - 2020 </span>
+                                <br>Department of Pharmacy (BSc) - University of Copenhagen </li>
+                            <li><span>2020 - 2022 <br>Transferred to Software Engineering</span>
+                                <br>Software Technology (BSc) - Technical University of Denmark  </li>
+                            <li><span>2022 - <br>Shifted to Canada in 2022</span>
+                                <br>Software Engineering Technology (OCAD) - Centennial College  </li>
+                        </ul>
+                    </div>
+                    <div class="tabs-text" id="cv">
+                        <ul>
+                            <!-- Linking the CV ---->
+                           <li> <a href="Assets/images/Resume_MNasir_Customer_Rep.pdf" download id="contact-btn"><i class="fa-solid fa-download"></i> Download</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include partials/footer.ejs %>

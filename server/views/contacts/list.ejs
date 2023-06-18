@@ -1,0 +1,82 @@
+<!--
+  Assignment 2
+  File name: list.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include ../partials/header.ejs  %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include ../partials/main_nav.ejs %>
+
+
+<!--  This page includes contacts list section ---->
+
+<!-- main ---->
+<main class="contacts-container">
+    <h1 id="contacts-h1"><%= title %></h1>
+    <!-- contact lsit information ---->
+    <div class="row">
+        <div class="offset-md-1 col-md-11">
+            <% if (typeof displayName == 'string' && displayName) { %>
+            <a href="/contacts-list/add" class="btn btn-primary" role="button" id="add-btn">
+                <i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <% } %>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- header row with insertation requirements -->
+                <tr class="d-flex">
+                    <% if (typeof displayName == 'string' && displayName) { %>
+                        <th class="text-center col-3">Name</th>
+                        <th class="text-center col-2">Phone</th>
+                        <th class="text-center col-5">Email</th>
+
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                    <% } else { %>
+                        <th class="text-center col-3">Name</th>
+                        <th class="text-center col-2">Phone</th>
+                        <th class="text-center col-5">Email</th>
+
+                    <% } %>
+                </tr>
+                <!-- repeatable row with the inforamtion to display -->
+
+                <!-- sort list alphabetically -->
+                <% ContactsList.sort((a, b) => a.name.localeCompare(b.name)); %> 
+                <% for(let count = 0; count < ContactsList.length; count++) { %>
+                    <tr class="d-flex">
+                        <% if (typeof displayName == 'string' && displayName) { %>
+                            <td class="text-center col-3"><%= ContactsList[count].name %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].phone %></td>
+                            <td class="text-center col-5"><%= ContactsList[count].email %></td>
+
+                            <!-- buttons to edit or delete the row ---->
+                            <td class="text-center col-1">
+                                <a href="/contacts-list/edit/<%= ContactsList[count]._id %>" class="btn btn-primary btn-sm" id="edit">
+                                <i class="fas fa-pencil-alt"></i> <br> Edit</a>
+                            </td>
+                            <td class="text-center col-1">
+                                <a href="/contacts-list/delete/<%= ContactsList[count]._id %>" class="btn btn-danger btn-sm" id="delete">
+                                <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                        <% } else { %>
+                            <td class="text-center col-3"><%= ContactsList[count].name %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].phone %></td>
+                            <td class="text-center col-5"><%= ContactsList[count].email %></td>
+                        <% } %>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include ../partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include ../partials/footer.ejs %>

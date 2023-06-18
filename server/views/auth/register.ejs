@@ -1,0 +1,73 @@
+<!--
+  Assignment 2
+  File name: register.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include ../partials/header.ejs  %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include ../partials/main_nav.ejs %>
+
+<!--  This page includes registration section ---->
+
+<!-- main ---->
+<main class="register-container">
+    <h1 id="register-h1">Register</h1>
+    <!-- message -->
+    <% if(messages.length > 0) { %>
+        <div class="alert alert-danger">
+            <%= messages %>
+        </div>
+    <% } %>
+    <!--Register form requirements -->
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <form method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control"
+                    name="username" placeholder="Enter Username"
+                    id="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control"
+                    name="password" placeholder="Enter Password"
+                    id="password" required>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" class="form-control"
+                    name="email" placeholder="Enter Email Address"
+                    id="email" required>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="displayName">Display Name: </label>
+                    <input type="text" class="form-control"
+                    name="displayName" placeholder="Enter Display Name"
+                    id="displayName" required>
+                </fieldset>
+                <!--Register form buttons -->
+                <fieldset class="form-group text-right" id="register-buttons">
+                    <input type="submit" class="btn-success" value="Register">
+                    <a href="/">
+                        <input type="button" class="btn-warning" value="Cancel">
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include ../partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include ../partials/footer.ejs %>

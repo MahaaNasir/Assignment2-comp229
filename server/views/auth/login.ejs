@@ -1,0 +1,60 @@
+<!--
+  Assignment 2
+  File name: login.ejs
+  Student Name: Maha Nasir
+  StudentID: 301266305
+  Date: 18 June 2023
+-->
+
+<!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
+<%- include ../partials/header.ejs  %>
+
+<!--  EJS template syntax includes the content of the "main_nav.ejs" partial file into this file ---->
+<%- include ../partials/main_nav.ejs %>
+
+<!--  This page includes Login section ---->
+
+<!-- main ---->
+<main class="login-container">
+    <h1 id="login-h1">LOGIN</h1>
+    <!-- The alert message -->
+    <% if(messages.length > 0) { %>
+        <div class="alert alert-danger">
+            <%= messages %>
+        </div>
+    <% } %>
+    <!--login form requirements -->
+    <div class="row">
+        <div class="offset-md-4 col-md-4">
+            <form method="POST" autocomplete="off">
+                <fieldset class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control"
+                    name="username" placeholder="Enter Username"
+                    id="username" required autofocus>
+                </fieldset>
+
+                <fieldset class="form-group" id="password-section" >
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control"
+                    name="password" placeholder="Enter Password"
+                    id="password" required>
+                    <div id="or" class="text-center">OR<br><a href="/register" id="register-link">Register Here</a></div>
+                </fieldset>
+                <!--login form buttons -->
+                <fieldset class="form-group text-right" id="login-buttons">
+                    <input type="submit" class=" btn-success" value="Login">
+                    <a href="/">
+                        <input type="button" class=" btn-warning" value="Cancel">
+                    </a>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!--  EJS template syntax includes the content of the "bottom_nav.ejs" partial file into this file ---->
+<%- include ../partials/bottom_nav.ejs %>
+
+<!--  EJS template syntax includes the content of the "footer.ejs" partial file into this file ---->
+<%- include ../partials/footer.ejs %>
