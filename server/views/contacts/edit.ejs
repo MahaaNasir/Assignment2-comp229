@@ -3,7 +3,7 @@
   File name: edit.ejs
   Student Name: Maha Nasir
   StudentID: 301266305
-  Date:  J18une 2023
+  Date:  18 June 2023
 -->
 
 <!--  EJS template syntax includes the content of the "header.ejs" partial file into this file ---->
@@ -27,7 +27,10 @@
                     <input type="text" class="form-control"
                     id="nameTextField" 
                     placeholder="Enter the name"
-                    name="name" required></input>
+                    name="name" 
+                    value="<%= contacts.name %>"
+                    required>
+                    
                 </div>
                 <!-- edit phone---->
                 <div class="form-group">
@@ -35,7 +38,10 @@
                     <input type="text" class="form-control"
                     id="phoneTextField" 
                     placeholder="Enter the phone number "
-                    name="phone" required></input>
+                    name="phone"
+                    value="<%= contacts.phone %>"
+                    required>
+                    
                 </div>
                 <!-- edit email---->
                 <div class="form-group">
@@ -43,7 +49,10 @@
                     <input type="text" class="form-control"
                     id="emailTextField" 
                     placeholder="Enter the email address"
-                    name="email" required></input>
+                    name="email" 
+                    value="<%= contacts.email %>"
+                    required>
+                    
                 </div>
                 <br>
                 <!-- submit and cancel buttons ---->

@@ -73,8 +73,8 @@
                  <a class="nav-link " href="/contacts-list">Business Contacts </a>
               </li>
               
-              <% if (typeof displayName == 'string' && displayName) { %>
-                <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+              <% if (typeof profileName == 'string' && profileName) { %>
+                <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= profileName %></li>
                 <li class="nav-item"><a href="/logout" class="nav-link">
                   <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
                 <% } else  { %>
