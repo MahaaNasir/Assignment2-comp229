@@ -22,7 +22,7 @@ let User = mongoose.Schema(
             default: "",
             require: "Email Address is required."
         },
-        displayName:{
+        profileName:{
             type: String,
             default: "",
             require: "User Name is required."
