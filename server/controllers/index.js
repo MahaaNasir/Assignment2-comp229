@@ -16,23 +16,23 @@ let userModel = require('../models/user');
 let User = userModel.User; //alias
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', { title: 'Home', displayName: req.user ? req.user.displayName : '' });
+    res.render('index', { title: 'Home', profileName: req.user ? req.user.profileName : '' });
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', { title: 'About', displayName: req.user ? req.user.displayName : '' });
+    res.render('about', { title: 'About', profileName: req.user ? req.user.profileName : '' });
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-    res.render('projects', { title: 'Projects', displayName: req.user ? req.user.displayName : '' });
+    res.render('projects', { title: 'Projects', profileName: req.user ? req.user.profileName : '' });
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-    res.render('services', { title: 'Services', displayName: req.user ? req.user.displayName : '' });
+    res.render('services', { title: 'Services', profileName: req.user ? req.user.profileName : '' });
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', { title: 'Contact Us', displayName: req.user ? req.user.displayName : '' });
+    res.render('contact', { title: 'Contact Us', profileName: req.user ? req.user.profileName : '' });
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -43,7 +43,7 @@ module.exports.displayLoginPage = (req, res, next) => {
         {
             title: "Login",
             messages: req.flash('loginMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            profileName: req.user ? req.user.profileName : ''
         });
     }
     else
@@ -84,7 +84,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
         {
             title: "Register",
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            profileName: req.user ? req.user.profileName : ''
         });
     }
     else
@@ -98,7 +98,7 @@ module.exports.processRegisterPage = (req, res, next) => {
     let newUser = new User({
         username: req.body.username,
         email: req.body.email,
-        displayName: req.body.displayName
+        profileName: req.body.profileName
     });
 
     User.register(newUser, req.body.password, (err) => {
@@ -118,7 +118,7 @@ module.exports.processRegisterPage = (req, res, next) => {
             {
                 title: "Register",
                 messages: req.flash('registerMessage'),
-                displayName: req.user ? req.user.displayName : ''
+                profileName: req.user ? req.user.profileName : ''
             });
         }
         else

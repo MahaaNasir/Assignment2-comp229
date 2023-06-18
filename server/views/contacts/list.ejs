@@ -21,7 +21,7 @@
     <!-- contact lsit information ---->
     <div class="row">
         <div class="offset-md-1 col-md-11">
-            <% if (typeof displayName == 'string' && displayName) { %>
+            <% if (typeof profileName == 'string' && profileName) { %>
             <a href="/contacts-list/add" class="btn btn-primary" role="button" id="add-btn">
                 <i class="fas fa-plus-circle"></i> Add a Contact</a>
             <% } %>
@@ -29,7 +29,7 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- header row with insertation requirements -->
                 <tr class="d-flex">
-                    <% if (typeof displayName == 'string' && displayName) { %>
+                    <% if (typeof profileName == 'string' && profileName) { %>
                         <th class="text-center col-3">Name</th>
                         <th class="text-center col-2">Phone</th>
                         <th class="text-center col-5">Email</th>
@@ -49,7 +49,7 @@
                 <% ContactsList.sort((a, b) => a.name.localeCompare(b.name)); %> 
                 <% for(let count = 0; count < ContactsList.length; count++) { %>
                     <tr class="d-flex">
-                        <% if (typeof displayName == 'string' && displayName) { %>
+                        <% if (typeof profileName == 'string' && profileName) { %>
                             <td class="text-center col-3"><%= ContactsList[count].name %></td>
                             <td class="text-center col-2"><%= ContactsList[count].phone %></td>
                             <td class="text-center col-5"><%= ContactsList[count].email %></td>

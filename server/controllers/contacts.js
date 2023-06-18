@@ -21,7 +21,7 @@ module.exports.displayContactsList = async (req, res, next)=>{
         res.render('contacts/list', 
             {title: 'Contacts', 
             ContactsList: contactsList,
-            displayName: req.user ? req.user.displayName : ''})
+            profileName: req.user ? req.user.profileName : ''})
     } catch (err){
         console.log(err);
     }
@@ -31,7 +31,7 @@ module.exports.displayAddPage = async (req, res, next)=>{
     try {
         res.render('contacts/add', 
         {title: 'Add Contact',
-        displayName: req.user ? req.user.displayName : ''})
+        profileName: req.user ? req.user.profileName : ''})
     } catch (err){
         console.log(err);
     }
@@ -61,7 +61,7 @@ module.exports.displayEditPage = async (req, res, next) => {
         res.render('contacts/edit', 
         {title: 'Edit Contact', 
         contacts: contactsToEdit,
-        displayName: req.user ? req.user.displayName : ''});
+        profileName: req.user ? req.user.profileName : ''});
     } catch (err){
         console.log(err);
         res.status(500).send(err);
