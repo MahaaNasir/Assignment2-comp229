@@ -11,5 +11,5 @@ module.exports =
 {
     //databse with mongosh
     //"URI":"mongodb://localhost/user_collection"
-    "URI":"mongodb+srv://mahanasir:xr9KOoLIW9JtajTE@mongodbserver.4u6f5g4.mongodb.net/?retryWrites=true&w=majority"
+    "URI":"mongodb+srv://mahanasir7:CFw6JtU26pI6PNiF@mongodbserverconnect.zpsoci1.mongodb.net/?retryWrites=true&w=majority"
 }
