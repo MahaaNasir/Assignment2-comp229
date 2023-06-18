@@ -1,3 +1,11 @@
+/*
+  Assignment 2
+  File name: user.js
+  Student Name: Maha Nasir
+  Student ID: 301266305
+  Date: 18 June 2023
+*/
+
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 

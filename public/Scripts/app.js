@@ -2,7 +2,7 @@
 
 /*
   Assignment 2
-  File name: app.css
+  File name: app.js
   Student Name: Maha Nasir
   Student ID: 301266305
   Date: 18 June 2023
